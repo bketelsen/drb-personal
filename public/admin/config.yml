@@ -1,0 +1,231 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "public/images/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads"
+
+local_backend: true
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: bketelsen
+    api_key: 933338931668225
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    extension: "mdx"
+    format: "frontmatter"
+    folder: "content/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.mda
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "category",
+          search_fields: ["name"],
+          multiple: true,
+          value_field: "{{slug}}",
+        }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "author",
+          search_fields: ["name"],
+          multiple: true,
+          value_field: "{{slug}}",
+        }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          format: "YYYY-MM-DD",
+        }
+      - { label: "Tags", name: "tags", widget: "list", default: ["news"] }
+      - {
+          label: "Cover Image",
+          name: "image",
+          widget: "image",
+          required: false,
+          tagname: "",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "author" # Used in routes, e.g., /admin/collections/blog
+    label: "Author" # Used in the UI
+    extension: "mdx"
+    identifier_field: name
+    format: "frontmatter"
+    folder: "content/authors" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "string" }
+      - {
+          label: "Email",
+          name: "email",
+          widget: "string",
+          default: "you@yourdomain.com",
+        }
+      - {
+          label: "Twitter",
+          name: "twitter",
+          widget: "string",
+          default: "@twitter",
+        }
+      - {
+          label: "Youtube",
+          name: "youtube",
+          widget: "string",
+          default: "youtubename",
+        }
+      - {
+          label: "Twitch",
+          name: "twitch",
+          widget: "string",
+          default: "twitchname",
+        }
+      - {
+          label: "Photo",
+          name: "photo",
+          widget: "image",
+          required: true,
+          tagname: "",
+        }
+      - {
+          label: "Avatar",
+          name: "avatar",
+          widget: "image",
+          required: true,
+          tagname: "",
+        }
+  - name: "category" # Used in routes, e.g., /admin/collections/blog
+    label: "Category" # Used in the UI
+    extension: "mdx"
+    identifier_field: name
+    format: "frontmatter"
+    folder: "content/categories" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "color",
+          name: "color",
+          widget: "select",
+          options:
+            [
+              "gray",
+              "red",
+              "yellow",
+              "green",
+              "blue",
+              "indigo",
+              "purple",
+              "pink",
+            ],
+        }
+
+  - name: "events" # Used in routes, e.g., /admin/collections/blog
+    label: "Event" # Used in the UI
+    extension: "mdx"
+    format: "frontmatter"
+    folder: "content/events" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Project" # Used in the UI
+    extension: "mdx"
+    format: "frontmatter"
+    folder: "content/projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Image",
+          name: "image",
+          widget: "image",
+          required: true,
+          tagname: "",
+        }
+      - { label: "URL", name: "href", widget: "string" }
+  - name: pages
+    label: Pages
+    label_singular: "Page"
+    folder: content/pages
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Template
+        name: template
+        widget: hidden
+        default: page
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+  - label: "Site"
+    name: "site"
+    files:
+      - label: "Settings"
+        name: "settings"
+        file: "content/siteMetadata.json"
+        format: json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Author, name: author, widget: string }
+          - { label: Header Title, name: headerTitle, widget: string }
+          - { label: Description, name: description, widget: string }
+          - {
+              label: Language,
+              name: language,
+              widget: string,
+              default: "en-us",
+            }
+          - { label: Site URL, name: siteUrl, widget: string }
+          - { label: Site Repo, name: siteRepo, widget: string }
+          - {
+              label: "Site Image",
+              name: "image",
+              widget: "image",
+              required: true,
+              tagname: "",
+            }
+          - {
+              label: "Social Banner",
+              name: "socialBanner",
+              widget: "image",
+              required: true,
+              tagname: "",
+            }
+          - { label: Email, name: email, widget: string }
+          - { label: GitHub, name: github, widget: string }
+          - { label: Twitter, name: twitter, widget: string }
+          - { label: Facebook, name: facebook, widget: string }
+          - { label: Youtube, name: youtube, widget: string }
+          - { label: Twitch, name: twitch, widget: string }
+          - { label: LinkedIN, name: linkedin, widget: string }
