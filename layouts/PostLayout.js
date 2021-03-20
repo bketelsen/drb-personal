@@ -9,7 +9,6 @@ const editUrl = (filepath) => `${siteMetdata.siteRepo}/blob/master/${filepath}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetdata.siteUrl}/blog/${slug}`)}`
 
-const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ post, children, frontMatter, next, prev }) {
   const { date, title, tags } = frontMatter
@@ -27,7 +26,7 @@ export default function PostLayout({ post, children, frontMatter, next, prev }) 
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetdata.locale, postDateTemplate)}
+                      {new Date(date).toDateString()}
                     </time>
                   </dd>
                 </div>

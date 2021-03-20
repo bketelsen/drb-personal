@@ -1,8 +1,6 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import Category from '@/components/Category'
-import siteMetdata from '@/content/siteMetadata'
-const postDateTemplate = { year: 'numeric', month: 'long', day: 'numeric' }
 
 const ListItem = ({ post }) => {
     const { date, title, excerpt, tags } = post.frontMatter
@@ -13,7 +11,7 @@ const ListItem = ({ post }) => {
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>
-                            {new Date(date).toLocaleDateString(siteMetdata.locale, postDateTemplate)}
+                            {new Date(date).toDateString()}
                         </time>
                     </dd>
                 </dl>
