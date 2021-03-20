@@ -3,7 +3,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
-import siteMetdata from '@/data/siteMetadata'
+import siteMetdata from '@/content/siteMetadata'
 
 const editUrl = (filepath) => `${siteMetdata.siteRepo}/blob/master/${filepath}`
 const discussUrl = (slug) =>
