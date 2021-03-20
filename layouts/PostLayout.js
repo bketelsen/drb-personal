@@ -46,7 +46,7 @@ export default function PostLayout({ post, children, frontMatter, next, prev }) 
               <dd>
                 <ul className="flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
                   {post.relationships.author.map((author, index) => (
-                    <li className="flex items-center space-x-2">
+                    <li key={author.slug} className="flex items-center space-x-2">
                       <img src={author.frontMatter.avatar} alt={author.frontMatter.name} className="w-10 h-10 rounded-full" />
                       <dl key={author.slug} className="text-sm font-medium leading-5 whitespace-nowrap">
                         <dt className="sr-only">Name</dt>

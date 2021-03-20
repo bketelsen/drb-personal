@@ -27,15 +27,13 @@ export default function Home({ posts }) {
       />
 
       {!posts.length && 'No posts found.'}
-      {posts.slice(0, MAX_DISPLAY).map((post) => {
-        return (
-          <ListLayout posts={posts} showSearch={false} title="Featured Posts" />
+      {posts.length && (
+        <ListLayout posts={posts.slice(0, MAX_DISPLAY)} showSearch={false} title="Featured Posts" />
 
-        )
-      })}
+      )}
 
 
-      <div className="flex justify-beginning text-base font-medium leading-6">
+      < div className="flex justify-beginning text-base font-medium leading-6">
         <Link
           href="/blog"
           className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"

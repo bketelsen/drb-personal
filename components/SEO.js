@@ -12,7 +12,7 @@ export const SEO = {
     description: siteMetadata.description,
     images: [
       {
-        url: `${siteMetadata.siteUrl}${siteMetadata.socialBanner}`,
+        url: `${siteMetadata.socialBanner}`,
         alt: siteMetadata.title,
         width: 1200,
         height: 600,
@@ -47,7 +47,7 @@ export const PageSeo = ({ title, description, url }) => {
   )
 }
 
-export const BlogSeo = ({ title, summary, date, lastmod, url, tags, images = [] }) => {
+export const BlogSeo = ({ title, excerpt, date, lastmod, url, tags, images = [] }) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
@@ -59,7 +59,7 @@ export const BlogSeo = ({ title, summary, date, lastmod, url, tags, images = [] 
 
   const featuredImages = imagesArr.map((img) => {
     return {
-      url: `${siteMetadata.siteUrl}${img}`,
+      url: `${img}`,
       alt: title,
     }
   })
@@ -68,7 +68,7 @@ export const BlogSeo = ({ title, summary, date, lastmod, url, tags, images = [] 
     <>
       <NextSeo
         title={`${title} – ${siteMetadata.title}`}
-        description={summary}
+        description={excerpt}
         canonical={url}
         openGraph={{
           type: 'article',
@@ -80,7 +80,7 @@ export const BlogSeo = ({ title, summary, date, lastmod, url, tags, images = [] 
           },
           url,
           title,
-          description: summary,
+          description: excerpt,
           images: featuredImages,
         }}
         additionalMetaTags={[
@@ -94,7 +94,7 @@ export const BlogSeo = ({ title, summary, date, lastmod, url, tags, images = [] 
         authorName={siteMetadata.author}
         dateModified={publishedAt}
         datePublished={modifiedAt}
-        description={summary}
+        description={excerpt}
         images={featuredImages}
         publisherName={siteMetadata.author}
         title={title}
