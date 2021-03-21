@@ -16,11 +16,17 @@ All data that powers the site is in the `/content` directory. Your first stop sh
 
 Start the development server with `pnpm start` - this watches the content directory and reloads on changes. Then start the cms proxy with `pnpm cms` in a separate terminal. This runs a proxy that saves content edits locally. Navigate to `/admin/index.html` to see the content types you can create and modify.
 
+### Images
+
+Images are hosted on [Cloudinary](https://www.cloudinary.com). A free account should be more than sufficient for general purpose websites, since image transformations are cached by Next.js.
+
 ## TODO
 
 - [ ] Page route at the root
+- [ ] MDX enhancements
 - [ ] Nav menu convert to CMS file
 - [ ] RSS
 - [ ] SiteMap
+- [ ] Cue vet for content types
 - [ ] API Endpoints for content
 - [ ] Possibly GraphQL endpoints for content
