@@ -7,7 +7,7 @@ export default function CategoryPage({ category, posts }) {
     return (
         <>
             <PageSeo
-                title={`Blog - ${siteMetadata.author}`}
+                title={`Blog - ${siteMetadata.author.name}`}
                 description={siteMetadata.description}
                 url={`${siteMetadata.siteUrl}/blog`}
             />

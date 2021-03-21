@@ -18,7 +18,7 @@ export default function Projects({ projects }) {
   return (
     <>
       <PageSeo
-        title={`Projects - ${siteMetadata.author}`}
+        title={`Projects - ${siteMetadata.author.name}`}
         description={siteMetadata.description}
         url={`${siteMetadata.siteUrl}/projects`}
       />

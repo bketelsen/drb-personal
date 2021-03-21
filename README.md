@@ -23,6 +23,7 @@ Images are hosted on [Cloudinary](https://www.cloudinary.com). A free account sh
 ## TODO
 
 - [ ] ?? Move content to separate repo served by graphql and/or REST
+- [ ] Add primary author to siteMetadata.json
 - [x] Page route at the root
 - [ ] MDX enhancements
 - [ ] Nav menu convert to CMS file

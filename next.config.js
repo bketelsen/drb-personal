@@ -11,6 +11,9 @@ module.exports = withBundleAnalyzer({
     domains: ['res.cloudinary.com'],
   },
   webpack: (config, { dev, isServer }) => {
+    if (isServer) {
+      require('./scripts/generateSiteMetadata.js');
+    }
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
@@ -37,6 +40,8 @@ module.exports = withBundleAnalyzer({
         'react-dom': 'preact/compat',
       })
     }
+
+
 
     return config
   },

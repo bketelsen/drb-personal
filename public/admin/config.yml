@@ -74,6 +74,8 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Bio", name: "bio", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Company", name: "company", widget: "string" }
       - {
           label: "Email",
           name: "email",
@@ -97,6 +99,18 @@ collections:
           name: "twitch",
           widget: "string",
           default: "twitchname",
+        }
+      - {
+          label: "Facebook",
+          name: "facebook",
+          widget: "string",
+          default: "facebookname",
+        }
+      - {
+          label: "GitHub",
+          name: "github",
+          widget: "string",
+          default: "githubname",
         }
       - {
           label: "Photo",
@@ -193,11 +207,10 @@ collections:
     files:
       - label: "Settings"
         name: "settings"
-        file: "content/siteMetadata.json"
+        file: "data/siteMetadata.json"
         format: json
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Author, name: author, widget: string }
           - { label: Header Title, name: headerTitle, widget: string }
           - { label: Description, name: description, widget: string }
           - { label: Language, name: locale, widget: string, default: "en-US" }
@@ -223,10 +236,12 @@ collections:
               required: true,
               tagname: "",
             }
-          - { label: Email, name: email, widget: string }
-          - { label: GitHub, name: github, widget: string }
-          - { label: Twitter, name: twitter, widget: string }
-          - { label: Facebook, name: facebook, widget: string }
-          - { label: Youtube, name: youtube, widget: string }
-          - { label: Twitch, name: twitch, widget: string }
-          - { label: LinkedIN, name: linkedin, widget: string }
+          - {
+              label: "Author",
+              name: "author",
+              widget: "relation",
+              collection: "author",
+              search_fields: ["name"],
+              multiple: false,
+              value_field: "{{slug}}",
+            }
