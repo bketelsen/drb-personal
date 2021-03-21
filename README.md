@@ -15,3 +15,11 @@ All data that powers the site is in the `/content` directory. Your first stop sh
 ### Editing Content in a Web-Based CMS
 
 Start the development server with `pnpm start` - this watches the content directory and reloads on changes. Then start the cms proxy with `pnpm cms` in a separate terminal. This runs a proxy that saves content edits locally. Navigate to `/admin/index.html` to see the content types you can create and modify.
+
+## TODO
+
+- [] Page route at the root
+- [] RSS
+- [] SiteMap
+- [] API Endpoints for content
+- [] Possibly GraphQL endpoints for content
