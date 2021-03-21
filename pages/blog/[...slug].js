@@ -1,7 +1,8 @@
+import fs from 'fs'
 import PostLayout from '@/layouts/PostLayout'
 import MDXComponents from '@/components/MDXComponents'
 import { useHydrate } from "next-mdx/client"
-
+import generateRss from '@/lib/generate-rss.js'
 import { getMdxNode, getAllMdxNodes, getMdxPaths } from "next-mdx/server"
 
 
@@ -27,8 +28,8 @@ export async function getStaticProps(context) {
 
 
   // rss
-  //const rss = generateRss(allPosts)
-  //fs.writeFileSync('./public/index.xml', rss)
+  const rss = generateRss(allPosts)
+  fs.writeFileSync('./public/index.xml', rss)
 
   return { props: { post, prev, next } }
 }

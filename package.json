@@ -6,7 +6,7 @@
     "cms": "npx netlify-cms-proxy-server",
     "start": "next-remote-watch ./data",
     "dev": "next dev",
-    "build": "next build ",
+    "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "env ANALYZE=true next build"
   },

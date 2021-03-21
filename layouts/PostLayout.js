@@ -13,7 +13,6 @@ const discussUrl = (slug) =>
 export default function PostLayout({ post, children, frontMatter, next, prev }) {
   const { date, title, tags } = frontMatter
   const slug = post.slug
-  console.log(post)
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetdata.siteUrl}/blog/${slug}`} {...frontMatter} />
