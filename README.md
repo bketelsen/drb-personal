@@ -19,6 +19,7 @@ Start the development server with `pnpm start` - this watches the content direct
 ## TODO
 
 - [ ] Page route at the root
+- [ ] Nav menu convert to CMS file
 - [ ] RSS
 - [ ] SiteMap
 - [ ] API Endpoints for content
