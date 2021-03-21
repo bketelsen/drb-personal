@@ -18,8 +18,8 @@ Start the development server with `pnpm start` - this watches the content direct
 
 ## TODO
 
-- [] Page route at the root
-- [] RSS
-- [] SiteMap
-- [] API Endpoints for content
-- [] Possibly GraphQL endpoints for content
+[] Page route at the root
+[] RSS
+[] SiteMap
+[] API Endpoints for content
+[] Possibly GraphQL endpoints for content
