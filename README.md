@@ -10,7 +10,7 @@ This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com
 
 ## Content & Data
 
-All data that powers the site is in the `/content` directory. Your first stop should be to edit `/content/siteMetadata.json` and change titles, labels, social media handles, etc.
+All data that powers the site is in the `/content` directory. Your first stop should be start the netlify CMS and modify the types in there.
 
 ### Editing Content in a Web-Based CMS
 
