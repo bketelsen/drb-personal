@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "cms": "npx netlify-cms-proxy-server",
-    "start": "next-remote-watch ./data",
+    "start": "next-remote-watch ./content",
     "dev": "next dev",
     "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
