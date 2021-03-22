@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from './Link'
-import headerNavLinks from '@/data/headerNavLinks'
+import siteMetadata from '@/content/siteMetadata'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
@@ -58,14 +58,14 @@ const MobileNav = () => {
           onClick={onToggleNav}
         ></button>
         <nav className="fixed h-full mt-8">
-          {headerNavLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
+          {siteMetadata.navLinks.map(({ href, title }) => (
+            <div key={title} className="px-12 py-4">
               <Link
-                href={link.href}
+                href={href}
                 className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
                 onClick={onToggleNav}
               >
-                {link.title}
+                {title}
               </Link>
             </div>
           ))}
