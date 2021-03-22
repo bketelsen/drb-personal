@@ -1,1 +1,33 @@
-{"siteUrl":"https://drb-personal.vercel.app","author":{"name":"Brian Ketelsen","bio":"Brian is obsessed with rebuilding blog platforms.","email":"mail@bjk.fyi","title":"Principal Cloud Developer Advocate","company":"Microsoft","twitter":"@bketelsen","youtube":"bketelsen","twitch":"bketelsen","facebook":"bketelsen","linkedin":"bketelsen","github":"bketelsen","photo":"https://res.cloudinary.com/bketelsen/image/upload/v1615424751/brian_9c775edb9d.jpg","avatar":"https://res.cloudinary.com/bketelsen/image/upload/v1615424604/xsmall_bri_41975318dd.png"},"headerTitle":"News from the Edge","title":"Brian's World","language":"en-us","socialBanner":"https://res.cloudinary.com/bketelsen/image/upload/v1615424812/b2ivia_M_Jto_U_96a608526e.jpg","siteRepo":"https://github.com/bketelsen/mysite","locale":"en-US","image":"https://res.cloudinary.com/bketelsen/image/upload/v1615424812/b2ivia_M_Jto_U_96a608526e.jpg","description":"My Website Description"}
+{
+  "siteUrl": "https://drb-personal.vercel.app",
+  "author": {
+    "name": "Brian Ketelsen",
+    "bio": "Brian is obsessed with rebuilding blog platforms.",
+    "email": "mail@bjk.fyi",
+    "title": "Principal Cloud Developer Advocate",
+    "company": "Microsoft",
+    "twitter": "@bketelsen",
+    "youtube": "bketelsen",
+    "twitch": "bketelsen",
+    "facebook": "bketelsen",
+    "linkedin": "bketelsen",
+    "github": "bketelsen",
+    "photo": "https://res.cloudinary.com/bketelsen/image/upload/v1615424751/brian_9c775edb9d.jpg",
+    "avatar": "https://res.cloudinary.com/bketelsen/image/upload/v1615424604/xsmall_bri_41975318dd.png"
+  },
+  "headerTitle": "News from the Edge",
+  "title": "Brian's World",
+  "language": "en-us",
+  "socialBanner": "https://res.cloudinary.com/bketelsen/image/upload/v1615424812/b2ivia_M_Jto_U_96a608526e.jpg",
+  "siteRepo": "https://github.com/bketelsen/mysite",
+  "locale": "en-US",
+  "image": "https://res.cloudinary.com/bketelsen/image/upload/v1615424812/b2ivia_M_Jto_U_96a608526e.jpg",
+  "description": "My Website Description",
+  "navLinks": [
+    { "title": "Home 2", "href": "/" },
+    { "title": "Blog", "href": "/blog" },
+    { "title": "Tags", "href": "/tags" },
+    { "title": "Projects", "href": "/projects" },
+    { "title": "About", "href": "/about" }
+  ]
+}

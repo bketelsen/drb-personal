@@ -1,5 +1,4 @@
 import siteMetadata from '@/content/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
@@ -30,13 +29,13 @@ const LayoutWrapper = ({ children }) => {
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
-              {headerNavLinks.map((link) => (
+              {siteMetadata.navLinks.map(({ title, href }) => (
                 <Link
-                  key={link.title}
-                  href={link.href}
+                  key={title}
+                  href={href}
                   className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
                 >
-                  {link.title}
+                  {title}
                 </Link>
               ))}
             </div>
