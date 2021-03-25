@@ -24,7 +24,7 @@
   "image": "https://res.cloudinary.com/bketelsen/image/upload/v1615424812/b2ivia_M_Jto_U_96a608526e.jpg",
   "description": "My Website Description",
   "navLinks": [
-    { "title": "Home 2", "href": "/" },
+    { "title": "Home", "href": "/" },
     { "title": "Blog", "href": "/blog" },
     { "title": "Tags", "href": "/tags" },
     { "title": "Projects", "href": "/projects" },

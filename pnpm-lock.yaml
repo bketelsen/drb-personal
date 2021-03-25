@@ -24,6 +24,7 @@ dependencies:
   remark-footnotes: 2.0.0
   remark-math: 3.0.1
   remark-slug: 6.0.0
+  swr: 0.5.4_react@16.13.1
   tailwindcss: 2.0.4_caf414ac65a978d0d57907a0ec9fb41e
 devDependencies:
   '@next/bundle-analyzer': 10.0.9
@@ -5734,6 +5735,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-yhy/sQYxR5BkC98CY7o31VGsg014AKLEPxdfhora76l36hD9Rdy5NZA/Ocn6yayNPgSamYdtX2rFJdcv07AYVw==
+  /swr/0.5.4_react@16.13.1:
+    dependencies:
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0
+    resolution:
+      integrity: sha512-TUSxxuC8uP/4JKV22ml91WQ0tbif+9HVhm683xm8KYfwZIW5ogwcnU634dg3x6N7azpIDIOLokoIi+z5vCz/yA==
   /table/6.0.7:
     dependencies:
       ajv: 7.2.1
@@ -6296,6 +6305,7 @@ specifiers:
   remark-parse: 9.0.0
   remark-slug: 6.0.0
   remark-stringify: 9.0.0
+  swr: ^0.5.4
   tailwindcss: ^2.0.2
   unified: 9.2.0
   unist-util-visit: 2.0.3
